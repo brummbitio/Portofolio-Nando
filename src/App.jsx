@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import ShinyText from "./components/ShinyText/ShinyText";
 import BlurText from "./components/BlurText/BlurText";
@@ -10,6 +10,7 @@ import { listTools, listProyek } from "./data";
 import ChromaGrid from "./components/ChromaGrid/ChromaGrid";
 import ProjectModal from "./components/ProjectModal/ProjectModal"; // <-- IMPORT MODAL
 import Aurora from "./components/Aurora/Aurora";
+import { ThemeContext } from "./context/ThemeContext.jsx";
 import AOS from 'aos';
 import ChatRoom from "./components/ChatRoom";
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -17,6 +18,7 @@ import 'aos/dist/aos.css'; // You can also use <link> for styles
 AOS.init();
 
 function App() {
+  const { theme } = useContext(ThemeContext);
   const aboutRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -30,6 +32,8 @@ function App() {
     setSelectedProject(null);
   };
   // -------------------------
+  const quoteAvatar = theme === 'light' ? './assets/nando1-light.png' : './assets/nando1.png';
+  const profileAvatar = theme === 'light' ? './assets/nando-light.png' : './assets/nando.png';
 
   useEffect(() => {
     const isReload =
@@ -70,12 +74,12 @@ function App() {
           speed={0.5}
         />
       </div>
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24"> {/* Add padding top for fixed navbar */}
 
-        <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-6 grid-cols-1">
+        <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-10 grid-cols-1">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
-            <div className="flex items-center gap-3 mb-6 bg bg-zinc-800 w-fit p-4 rounded-2xl">
-              <img src="./assets/faris1.png" className="w-10 rounded-md" />
+            <div className="flex items-center gap-3 mb-6 bg-white dark:bg-zinc-800 w-fit p-4 rounded-2xl border dark:border-none border-gray-200 shadow-sm">
+              <img src={quoteAvatar} className="w-10 rounded-md" alt="Quote avatar"/>
               <q>Avoid or just undertake it</q>
             </div>
             <h1 className="text-5xl font-bold mb-6">
@@ -86,18 +90,18 @@ function App() {
               delay={150}
               animateBy="words"
               direction="top"
-              className=" mb-6"
+              className=" mb-6 text-gray-600 dark:text-gray-300"
             />
             <div className="flex items-center sm:gap-4 gap-2">
               <a 
                 href="./assets/CV.pdf" 
                 download="Faris_Edrik_Prayoga_CV.pdf" 
-                className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors"
+                className="font-semibold bg-white dark:bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-[#222] transition-colors shadow-sm"
               >
                 <ShinyText text="Download CV" disabled={false} speed={3} className="custom-class" />
               </a>
 
-              <a href="#project" className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-700 hover:bg-[#222] transition-colors">
+              <a href="#project" className="font-semibold bg-white dark:bg-[#1a1a1a] p-4 px-6 rounded-full border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-[#222] transition-colors shadow-sm">
                 <ShinyText text="Explore My Projects" disabled={false} speed={3} className="custom-class" />
               </a>
             </div>
@@ -105,12 +109,12 @@ function App() {
           </div>
           <div className="md:ml-auto animate__animated animate__fadeInUp animate__delay-4s">
             <ProfileCard
-              name="Faris Edrik P"
+              name="Fernando Putra"
               title="Web Developer"
-              handle="farisedrikp"
+              handle="thisnando_"
               status="Online"
               contactText="Contact Me"
-              avatarUrl="./assets/faris.png"
+              avatarUrl={profileAvatar}
               showUserInfo={true}
               enableTilt={true}
               enableMobileTilt={false}
@@ -118,13 +122,12 @@ function App() {
             />
           </div>
         </div>
-        {/* tentang */}
-        <div className="mt-15 mx-auto w-full max-w-[1600px] rounded-3xl border-[5px] border-violet-500/40 shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-gradient-to-br from-[#0a0a0a] via-[#111111] to-[#1a1a1a] p-6" id="about">
+        
+        <div className="mt-32 mx-auto w-full max-w-[1600px] rounded-3xl border border-gray-200 dark:border-[5px] dark:border-violet-500/40 dark:shadow-[0_0_30px_rgba(168,85,247,0.4)] bg-white dark:bg-gradient-to-br dark:from-[#0a0a0a] dark:via-[#111111] dark:to-[#1a1a1a] p-6 shadow-lg" id="about">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-0 px-8" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-            <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-violet-500/30">
-              {/* Kolom kiri */}
+            <div className="basis-full md:basis-7/12 pr-0 md:pr-8 border-b md:border-b-0 md:border-r border-gray-200 dark:border-violet-500/30 pb-8 md:pb-0">
               <div className="flex-1 text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+                <h2 className="text-3xl md:text-4xl font-bold dark:text-white mb-5">
                   About Me
                 </h2>
 
@@ -133,7 +136,7 @@ function App() {
                   delay={150}
                   animateBy="words"
                   direction="top"
-                  className="text-base md:text-lg leading-relaxed mb-10 text-gray-300"
+                  className="text-base md:text-lg leading-relaxed mb-10 text-gray-600 dark:text-gray-300"
                 />
 
                 <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
@@ -141,53 +144,52 @@ function App() {
                     <h1 className="text-3xl md:text-4xl mb-1">
                       20<span className="text-violet-500">+</span>
                     </h1>
-                    <p>Project Finished</p>
+                    <p className="text-gray-500 dark:text-gray-400">Project Finished</p>
                   </div>
                   <div>
                     <h1 className="text-3xl md:text-4xl mb-1">
                       3<span className="text-violet-500">+</span>
                     </h1>
-                    <p>Years of Experience</p>
+                    <p className="text-gray-500 dark:text-gray-400">Years of Experience</p>
                   </div>
                   <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true">
                     <h1 className="text-3xl md:text-4xl mb-1">
                       3.81<span className="text-violet-500">/4.00</span>
                     </h1>
-                    <p>GPA</p>
+                    <p className="text-gray-500 dark:text-gray-400">GPA</p>
                   </div>
                 </div>
-
 
                 <ShinyText
                   text="Working with heart, creating with mind."
                   disabled={false}
                   speed={3}
-                  className="text-sm md:text-base text-violet-400"
+                  className="text-sm md:text-base text-violet-500 dark:text-violet-400"
                 />
               </div>
             </div>
-
-            {/* Kolom kanan */}
+            
             <div className="basis-full md:basis-5/12 pl-0 md:pl-8 overflow-hidden max-w-full flex justify-center ">
               <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
             </div>
           </div>
 
         </div>
+        
         <div className="tools mt-32">
           <h1 className="text-4xl/snug font-bold mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true" >Tools & Technologies</h1>
-          <p className="w-2/5 text-base/loose opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
+          <p className="w-full md:w-2/5 text-base/loose text-gray-500 dark:opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">My Profesional Skills</p>
           <div className="tools-box mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
 
             {listTools.map((tool) => (
               <div
                 key={tool.id} data-aos="fade-up" data-aos-duration="1000" data-aos-delay={tool.dad} data-aos-once="true"
-                className="flex items-center gap-4 p-4 border border-zinc-700 rounded-xl bg-zinc-900/60 backdrop-blur-md hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
+                className="flex items-center gap-4 p-4 border border-gray-200 dark:border-zinc-700 rounded-xl bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md hover:bg-gray-100/80 dark:hover:bg-zinc-800/80 transition-all duration-300 group shadow-lg"
               >
                 <img
                   src={tool.gambar}
-                  alt="Tools Image"
-                  className="w-16 h-16 object-contain bg-zinc-800 p-2 rounded-lg group-hover:bg-zinc-900 transition-all duration-300"
+                  alt={tool.nama}
+                  className="w-16 h-16 object-contain bg-gray-100 dark:bg-zinc-800 p-2 rounded-lg group-hover:bg-gray-200 dark:group-hover:bg-zinc-900 transition-all duration-300"
                 />
                 <div className="flex flex-col overflow-hidden">
                   <div className="truncate">
@@ -198,24 +200,21 @@ function App() {
                       className="text-lg font-semibold block"
                     />
                   </div>
-                  <p className="text-sm text-zinc-400 truncate">{tool.ket}</p>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 truncate">{tool.ket}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        {/* tentang */}
-
-        {/* Proyek */}
+        
         <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
         <h1 className="text-center text-4xl font-bold mb-2" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Project</h1>
-        <p className="text-base/loose text-center opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a selection of projects that reflect my skills, creativity, and passion for building meaningful digital experiences.</p>
+        <p className="text-base/loose text-center text-gray-500 dark:opacity-50" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">Showcasing a selection of projects that reflect my skills, creativity, and passion for building meaningful digital experiences.</p>
         <div className="proyek-box mt-14" >
-
           <div style={{ height: 'auto', position: 'relative' }} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true" >
             <ChromaGrid
               items={listProyek}
-              onItemClick={handleProjectClick} // Kirim fungsi untuk handle klik
+              onItemClick={handleProjectClick}
               radius={500}
               damping={0.45}
               fadeOut={0.6}
@@ -223,10 +222,7 @@ function App() {
             />
           </div>
         </div>
-        {/* Proyek */}
 
-
-        {/* Kontak */}
         <div className="kontak mt-32 sm:p-10 p-0" id="contact">
           <h1
             className="text-4xl mb-2 font-bold text-center"
@@ -237,7 +233,7 @@ function App() {
             Contact & Chat
           </h1>
           <p
-            className="text-base/loose text-center mb-10 opacity-50"
+            className="text-base/loose text-center mb-10 text-gray-500 dark:opacity-50"
             data-aos="fade-up"
             data-aos-duration="1000"
             data-aos-delay="300"
@@ -246,19 +242,16 @@ function App() {
             Get in touch with me or chat in real-time
           </p>
 
-          {/* Container dua kolom */}
           <div className="flex flex-col md:flex-row gap-8">
-            {/* Chat Room di kiri */}
-            <div className="flex-1 bg-zinc-800 p-6 rounded-md" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
+            <div className="flex-1 bg-white dark:bg-zinc-800 p-6 rounded-md border border-gray-200 dark:border-zinc-700 shadow-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-once="true">
               <ChatRoom />
             </div>
 
-            {/* Contact Form di kanan */}
             <div className="flex-1">
               <form
                 action="https://formsubmit.co/rissoppa21@gmail.com"
                 method="POST"
-                className="bg-zinc-800 p-10 w-full rounded-md"
+                className="bg-white dark:bg-zinc-800 p-10 w-full rounded-md border border-gray-200 dark:border-zinc-700 shadow-lg"
                 autoComplete="off"
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -272,7 +265,7 @@ function App() {
                       type="text"
                       name="Name"
                       placeholder="Input Name..."
-                      className="border border-zinc-500 p-2 rounded-md"
+                      className="border border-gray-300 dark:border-zinc-500 p-2 rounded-md bg-transparent focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none"
                       required
                     />
                   </div>
@@ -282,7 +275,7 @@ function App() {
                       type="email"
                       name="Email"
                       placeholder="Input Email..."
-                      className="border border-zinc-500 p-2 rounded-md"
+                      className="border border-gray-300 dark:border-zinc-500 p-2 rounded-md bg-transparent focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none"
                       required
                     />
                   </div>
@@ -294,14 +287,14 @@ function App() {
                       cols="45"
                       rows="7"
                       placeholder="Message..."
-                      className="border border-zinc-500 p-2 rounded-md"
+                      className="border border-gray-300 dark:border-zinc-500 p-2 rounded-md bg-transparent focus:ring-2 focus:ring-violet-500 focus:border-violet-500 outline-none"
                       required
                     ></textarea>
                   </div>
                   <div className="text-center">
                     <button
                       type="submit"
-                      className="font-semibold bg-[#1a1a1a] p-4 px-6 rounded-full w-full cursor-pointer border border-gray-700 hover:bg-[#222] transition-colors"
+                      className="font-semibold bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 p-4 px-6 rounded-full w-full cursor-pointer hover:opacity-90 transition-opacity"
                     >
                       <ShinyText text="Send" disabled={false} speed={3} className="custom-class" />
                     </button>
@@ -311,7 +304,6 @@ function App() {
             </div>
           </div>
         </div>
-        {/* Kontak */}
       </main>
 
       <ProjectModal
