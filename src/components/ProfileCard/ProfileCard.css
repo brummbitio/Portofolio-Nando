@@ -112,6 +112,7 @@
   mix-blend-mode: color-dodge;
 }
 
+
 .pc-shine,
 .pc-shine::after {
   --space: 5%;
