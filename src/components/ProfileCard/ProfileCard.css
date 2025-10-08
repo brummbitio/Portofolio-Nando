@@ -100,6 +100,10 @@
   transform: translate3d(0, 0, 0.01px);
 }
 
+.light .pc-inside {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .pc-shine {
   mask-image: var(--icon);
   mask-mode: luminance;
@@ -111,7 +115,6 @@
   animation: holo-bg 18s linear infinite;
   mix-blend-mode: color-dodge;
 }
-
 
 .pc-shine,
 .pc-shine::after {
@@ -175,6 +178,10 @@
   mix-blend-mode: overlay;
   filter: brightness(0.8) contrast(1.2);
   z-index: 4;
+}
+
+.light .pc-glare {
+  background-image: radial-gradient(farthest-corner circle at var(--pointer-x) var(--pointer-y), hsl(255, 100%, 91%) 12%, hsla(0, 0%, 100%, 0.8) 90%);
 }
 
 .pc-avatar-content {
@@ -312,6 +319,10 @@
   -webkit-background-clip: text;
 }
 
+.light .pc-details h3 {
+  background-image: linear-gradient(to bottom, #000, #6b6b6b);
+}
+
 .pc-details p {
   font-weight: 600;
   position: relative;
@@ -325,6 +336,10 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
+}
+
+.light .pc-details p {
+  background-image: linear-gradient(to bottom, #000, #4a4a4a);
 }
 
 @keyframes glow-bg {
