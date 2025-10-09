@@ -13,6 +13,10 @@
   animation: shine 5s linear infinite;
 }
 
+.light .shiny-text {
+  color: rgba(1, 7, 161, 0.84);
+}
+
 @keyframes shine {
   0% {
     background-position: 100%;

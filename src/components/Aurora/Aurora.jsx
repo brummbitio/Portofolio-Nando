@@ -1,5 +1,6 @@
 import { Renderer, Program, Mesh, Color, Triangle } from "ogl";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 import './Aurora.css';
 
@@ -110,13 +111,27 @@ void main() {
 `;
 
 export default function Aurora(props) {
+  const { theme } = useContext(ThemeContext);
+
+
+  const colorStops =
+    theme === "light"
+      ? ["#FFFFFF", "#FFFFFF", "#FFFFFF"]
+      : ["#5227FF", "#DC7474", "#5227FF"];
+
+  // Ambil properti tambahan dari props
   const {
-    colorStops = ["#5227FF", "#7cff67", "#5227FF"],
     amplitude = 1.0,
     blend = 0.5
   } = props;
+  
   const propsRef = useRef(props);
   propsRef.current = props;
+
+  const colorStopsRef = useRef(colorStops);
+  useEffect(() => {
+    colorStopsRef.current = colorStops;
+  }, [colorStops]);
 
   const ctnDom = useRef(null);
 
@@ -153,7 +168,7 @@ export default function Aurora(props) {
       delete geometry.attributes.uv;
     }
 
-    const colorStopsArray = colorStops.map((hex) => {
+    const initialStops = (colorStopsRef.current ?? colorStops).map((hex) => {
       const c = new Color(hex);
       return [c.r, c.g, c.b];
     });
@@ -164,7 +179,7 @@ export default function Aurora(props) {
       uniforms: {
         uTime: { value: 0 },
         uAmplitude: { value: amplitude },
-        uColorStops: { value: colorStopsArray },
+        uColorStops: { value: initialStops },
         uResolution: { value: [ctn.offsetWidth, ctn.offsetHeight] },
         uBlend: { value: blend }
       }
@@ -180,7 +195,8 @@ export default function Aurora(props) {
       program.uniforms.uTime.value = time * speed * 0.1;
       program.uniforms.uAmplitude.value = propsRef.current.amplitude ?? 1.0;
       program.uniforms.uBlend.value = propsRef.current.blend ?? blend;
-      const stops = propsRef.current.colorStops ?? colorStops;
+
+      const stops = colorStopsRef.current ?? colorStops;
       program.uniforms.uColorStops.value = stops.map((hex) => {
         const c = new Color(hex);
         return [c.r, c.g, c.b];
@@ -200,7 +216,11 @@ export default function Aurora(props) {
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [amplitude]);
+  }, [amplitude, blend]);
+
+  useEffect(() => {
+    console.log("Theme changed → colorStopsRef updated:", colorStopsRef.current);
+  }, [colorStops]);
 
   return <div ref={ctnDom} className="aurora-container" />;
 }
