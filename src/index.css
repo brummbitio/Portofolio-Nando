@@ -3,5 +3,175 @@
 @layer base {
   body {
     font-family: "Poppins", sans-serif;
+    /* Transisi halus saat ganti tema */
+    @apply transition-colors duration-300;
   }
+
+  /* =======================================================
+     GLOBAL THEME VARIABLES
+     ======================================================= */
+
+  /* Tema Terang (LIGHT) */
+  html.light {
+    --bg-primary: #fcfcfc;
+    --bg-secondary: #ffffff;
+    --text-primary: #18181b; /* zinc-900 */
+    --text-secondary: #3f3f46; /* zinc-700 */
+    --text-muted: #71717a; /* zinc-500 */
+    --border-color: rgba(1, 7, 161, 0.84);
+    --accent-color: #1a1ca1; /* indigo-500 */
+    --shadow-color: rgba(72, 0, 255, 0.1);
+  }
+
+  /* Tema Gelap (DARK) */
+  html.dark {
+    --bg-primary: #18181b; /* zinc-900 */
+    --bg-secondary: linear-gradient(to bottom right, #0a0a0a, #111111, #1a1a1a);
+    --text-primary: #ffffff;
+    --text-secondary: #d4d4d8; /* zinc-300 */
+    --text-muted: #a1a1aa; /* zinc-400 */
+    --border-color: rgba(168, 85, 247, 0.4);
+    --accent-color: #a855f7; /* violet-500 */
+    --shadow-color: rgba(168, 85, 247, 0.4);
+  }
+
+  ul li a:hover {
+  color: var(--accent-color); /* violet-500 */
+  transition: color 0.3s ease;
+ }
+
+  p {
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+  }
+
+
+  /* =======================================================
+     GLOBAL STYLING
+     ======================================================= */
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  .bg-border {
+    background-color: var(--text-primary);
+  }
+
+  /* =======================================================
+     ABOUT SECTION STYLING
+     ======================================================= */
+
+  #about {
+    margin-top: 8rem; /* mt-32 */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1600px;
+    border-radius: 1.5rem; /* rounded-3xl */
+    padding: 1.5rem; /* p-6 */
+    transition: all 0.3s ease-in-out;
+  }
+
+  #about {
+    border: 5px solid var(--border-color);
+    background: var(--bg-secondary);
+    box-shadow: 0 0 30px var(--shadow-color);
+  }
+
+ .experience-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  border: 5px solid var(--border-color);
+  background: var(--bg-primary);
+  box-shadow: 0 10px 15px var(--shadow-color);
+  }
+
+  /* 🌤️ Tema Terang */
+  .experience-item {
+    border-bottom: 1px solid rgba(139, 92, 246, 0.2); /* border-violet-500/20 */
+    padding-top: 2rem; /* py-8 */
+    padding-bottom: 2rem;
+    padding-left: 1.5rem; /* px-6 */
+    padding-right: 1.5rem;
+    margin-left: -1.5rem; /* -mx-6 */
+    margin-right: -1.5rem;
+    border-radius: 0.75rem; /* rounded-xl */
+    transition: all 0.3s ease;
+  } 
+
+  /* ✨ Hover effect (berlaku untuk keduanya) */
+  html.light .experience-item:hover {
+    background-color: rgba(244, 244, 245, 0.8); /* zinc-100-ish */
+  }
+
+  html.dark .experience-item:hover {
+    background-color: rgba(39, 39, 42, 0.6); /* zinc-800/60 */
+  }
+
+
+  /* Tema terang */
+  html.light .blur-text,
+  html.light .blur-text span {
+    color: #52525b; /* zinc-600 */
+  }
+
+  /* Tema gelap */
+  html.dark .blur-text,
+  html.dark .blur-text span {
+    color: #d1d5db; /* gray-300 */
+  }
+
+
+  .accent-text {
+    color: var(--accent-color); /* violet-500 */
+  }
+
+  /* Tema terang */
+  html.light .custom-button {
+    background-color: #f9fafb; /* zinc-50 */
+    border-color: #d4d4d8; /* zinc-300 */
+    color: #18181b; /* zinc-900 */
+  }
+
+  html.light .custom-button:hover {
+    background-color: #f3f4f6; /* gray-100 */
+  }
+
+  /* Tema gelap */
+  html.dark .custom-button {
+    background-color: #272727;
+    border-color: #3f3f46; /* zinc-700 */
+    color: #e4e4e7; /* zinc-200 */
+  }
+
+  html.dark .custom-button:hover {
+    background-color: #222; /* efek hover gelap */
+  }
+
+    html.light .icon-button {
+    background-color: #272727; /* zinc-50 */
+    border-color: #d4d4d8; /* zinc-300 */
+    color: #e4e4e7; /* zinc-900 */
+  }
+
+  html.light .icon-button:hover {
+    background-color: #222; /* gray-100 */
+  }
+
+  /* Tema gelap */
+  html.dark .icon-button {
+    background-color: #f9fafb;
+    border-color: #3f3f46; /* zinc-700 */
+    color: #18181b; /* zinc-200 */
+  }
+
+  html.dark .icon-button:hover {
+    background-color: #f3f4f6; /* efek hover gelap */
+  }
+
 }

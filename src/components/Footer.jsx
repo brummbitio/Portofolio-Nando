@@ -6,7 +6,7 @@ const Footer = () => {
   const items = [
     { icon: <VscHome size={18} />, label: "Home", onClick: () => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" }) },
     { icon: <VscAccount size={18} />, label: "About Me", onClick: () => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" }) },
-    { icon: <VscArchive size={18} />, label: "Project", onClick: () => document.getElementById("project")?.scrollIntoView({ behavior: "smooth" }) },
+    { icon: <VscArchive size={18} />, label: "Experience", onClick: () => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" }) },
   ];
 
   return (
@@ -21,9 +21,9 @@ const Footer = () => {
 
         {/* Ikon Sosmed - di tengah di mobile */}
         <div className="flex gap-3 order-2 md:order-none">
-          <a href="https://github.com/rissss21"><i className="ri-github-fill ri-2x"></i></a>
-          <a href="https://www.instagram.com/farisedrikprayoga/"><i className="ri-instagram-fill ri-2x"></i></a>
-          <a href="https://www.youtube.com/@FarisEdrikPrayoga"><i className="ri-youtube-fill ri-2x"></i></a>
+          {/* <a href="https://github.com/rissss21"><i className="ri-github-fill ri-2x"></i></a> */}
+          <a href="https://www.instagram.com/thisnando_/"><i className="ri-instagram-fill ri-2x"></i></a>
+          {/* <a href="https://www.youtube.com/@FarisEdrikPrayoga"><i className="ri-youtube-fill ri-2x"></i></a> */}
         </div>
 
         {/* Dock - paling bawah di mobile */}
