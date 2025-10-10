@@ -88,26 +88,26 @@ function App() {
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
             <div className="flex items-center gap-3 mb-6 w-fit p-4 rounded-2xl border dark:border-none border-gray-200 shadow-sm">
               <img src={quoteAvatar} className="w-10 rounded-md" alt="Quote avatar"/>
-              <q>Avoid or just undertake it</q>
+              <q>Innovation starts with curiosity.</q>
             </div>
             <h1 className="text-5xl font-bold mb-6">
               <ShinyText text="Hi I'm Fernando Putra Islamy" disabled={false} speed={3} className='custom-class' />
             </h1>
             <BlurText
-              text="A passionate application and web developer dedicated to crafting modern, high-performance digital experiences through innovative and user-friendly solutions."
+              text="A creative web and application developer passionate about building modern, high-performance, and user-focused digital experiences. With a background in graphic design and media, I combine aesthetics and technology to deliver impactful and intuitive products."
               delay={150}
               animateBy="words"
               direction="top"
               className="blur-text mb-6"
             />
             <div className="flex items-center sm:gap-4 gap-2">
-              <a 
+              {/* <a 
                 href="./assets/CV.pdf" 
                 download="Faris_Edrik_Prayoga_CV.pdf" 
                 className="custom-button font-semibold  p-4 px-6 rounded-full border transition-colors shadow-sm"
               >
                 <ShinyText text="Download CV" disabled={false} speed={3} className="custom-class" />
-              </a>
+              </a> */}
 
               <a href="#project" className="custom-button font-semibold p-4 px-6 rounded-full border transition-colors shadow-sm">
                 <ShinyText text="Explore My Projects" disabled={false} speed={3} className="custom-class" />
@@ -143,14 +143,14 @@ function App() {
                 <h2 className="accent-text text-3xl md:text-4xl font-bold mb-5">About Me</h2>
 
                 <BlurText
-                  text="I’m Faris Edrik Prayoga, a full-stack developer passionate about building modern, high-performance applications..."
+                  text="I’m Fernando Putra Islamy, a passionate full stack and application developer dedicated to crafting modern, high-performance, and visually appealing digital experiences. With a background in design and creative media, I love blending functionality with aesthetics. I’m also active in various student organizations and committees, where I develop my leadership and collaboration skills."
                   delay={150}
                   animateBy="words"
                   direction="top"
                   className="blur-text text-base md:text-lg leading-relaxed mb-10"
                 />
 
-                <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
+                {/* <div className="flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-y-8 sm:gap-y-0 mb-4 w-full">
                   <div>
                     <h1 className="text-3xl md:text-4xl mb-1">20<span className="accent-text">+</span></h1>
                     <p>Project Finished</p>
@@ -163,10 +163,10 @@ function App() {
                     <h1 className="text-3xl md:text-4xl mb-1">3.81<span className="accent-text">/4.00</span></h1>
                     <p>GPA</p>
                   </div>
-                </div>
+                </div> */}
 
                 <ShinyText
-                  text="Working with heart, creating with mind."
+                  text="Great technology comes from teamwork, creativity, and purpose."
                   disabled={false}
                   speed={3}
                   className="text-sm md:text-base"
@@ -223,10 +223,10 @@ function App() {
               Experience
             </span>
             <h2 className="text-4xl font-bold text-center mb-6">
-              Exploring My Growth <br className="hidden sm:block" /> as a Designer
+              Exploring My Growth <br className="hidden sm:block" /> as a Developer
             </h2>
             <p className="text-center text-gray-500 dark:text-gray-400 mb-16 max-w-2xl mx-auto">
-              Every role and project has shaped my skills and passion for design.
+              Every role and project has shaped my skills and passion for develop.
             </p>
 
             {/* === Timeline Section Start === */}
@@ -236,7 +236,7 @@ function App() {
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
-                    Exploring My Growth as a Designer
+                    Exploring My Education Journey
                   </h2>
                 </div>
 
@@ -246,32 +246,18 @@ function App() {
                   <div className="space-y-12">
                     {[
                       {
-                        period: "2022–2025",
-                        title: "Senior UI/UX Designer",
-                        company: "Odama Studio",
+                        period: "2024 - NOW",
+                        title: "Bachelor of Computer Engineering",
+                        company: "Brawijaya University",
                         description:
-                          "Led a team of designers, developed design systems, and enhanced user experience across multiple products.",
+                          "Focusing on computer hardware systems, embedded technologies, and digital system design, while also exploring software development and creative technology integration through real-world projects and campus organizations.",
                       },
                       {
-                        period: "2021–2022",
-                        title: "Product Designer",
-                        company: "Vektora Studio",
+                        period: "2021–2024",
+                        title: "Science Major (IPA)",
+                        company: "SMAN 95 Jakarta",
                         description:
-                          "Created design solutions for digital and visual projects, ensuring clarity, consistency, and prototyping ideas.",
-                      },
-                      {
-                        period: "2020–2021",
-                        title: "Graphic Designer",
-                        company: "Keitoto Studio",
-                        description:
-                          "Worked on branding, marketing materials, and creative visual identity for clients.",
-                      },
-                      {
-                        period: "2019–2021",
-                        title: "Web Developer",
-                        company: "Potara Studio",
-                        description:
-                          "Developed responsive websites, optimized front-end performance, and collaborated with designers.",
+                          "Developed strong analytical and problem-solving skills through science and mathematics studies, and actively participated in school organizations and leadership activities.",
                       },
                     ].map((item, index) => {
                       const isEven = index % 2 === 0;
@@ -307,7 +293,7 @@ function App() {
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
-                    Exploring My Growth as a Designer
+                    Exploring My Growth as Developer
                   </h2>
                 </div>
 
@@ -315,29 +301,16 @@ function App() {
                   <div className="space-y-0">
                     {[
                       {
-                        year: "2022-2025",
-                        title: "Senior UI/UX Designer",
-                        company: "Odama Studio",
-                        description: null,
+                        year: "April 2024 - July 2024",
+                        title: "Digital Media Intern",
+                        company: "Wiwara Bizspace",
+                        description: "Designed and managed digital content for social media platforms (Instagram, LinkedIn), developed a website for Purasaba, and analyzed campaign performance to optimize digital branding strategies.",
                       },
                       {
-                        year: "2021-2022",
-                        title: "Product Designer",
-                        company: "Vektora Studio",
-                        description:
-                          "I created and refined design solutions for digital and visual projects, ensuring clarity and consistency while working with teams. I also developed prototypes to test ideas and improve the overall experience.",
-                      },
-                      {
-                        year: "2020-2021",
-                        title: "Graphic Designer",
-                        company: "Keitoto Studio",
-                        description: null,
-                      },
-                      {
-                        year: "2019-2021",
-                        title: "Web Developer",
-                        company: "Potara Studio",
-                        description: null,
+                        year: "February 2024 - March 2024",
+                        title: "Internship App Programmer",
+                        company: "RAION FILKOM Universitas Brawijaya",
+                        description: "Developed “NgalamPark”, a mobile application for parking management using React Native. Collaborated with a small team to design user interfaces and implement backend integration.",
                       },
                     ].map((exp, index) => (
                     <div
@@ -377,7 +350,7 @@ function App() {
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
-                    Exploring My Growth as a Designer
+                    Exploring My Organizational Journey
                   </h2>
                 </div>
 
@@ -387,32 +360,18 @@ function App() {
                   <div className="space-y-12">
                     {[
                       {
-                        period: "2022–2025",
-                        title: "Senior UI/UX Designer",
-                        company: "Odama Studio",
+                        period: "March 2025 – Now",
+                        title: "Expert Staff of Student Resource Development",
+                        company: "Executive Student Board, Universitas Brawijaya",
                         description:
-                          "Led a team of designers, developed design systems, and enhanced user experience across multiple products.",
+                          "Serves as the deputy coordinator for organizational programs, leading the creative internal division and overseeing design initiatives. Actively contributes to various student development projects that create meaningful impact for Universitas Brawijaya students.",
                       },
                       {
-                        period: "2021–2022",
-                        title: "Product Designer",
-                        company: "Vektora Studio",
+                        period: "2022 – 2023",
+                        title: "Vice President of Student Council",
+                        company: "95 Senior High School, Jakarta",
                         description:
-                          "Created design solutions for digital and visual projects, ensuring clarity, consistency, and prototyping ideas.",
-                      },
-                      {
-                        period: "2020–2021",
-                        title: "Graphic Designer",
-                        company: "Keitoto Studio",
-                        description:
-                          "Worked on branding, marketing materials, and creative visual identity for clients.",
-                      },
-                      {
-                        period: "2019–2021",
-                        title: "Web Developer",
-                        company: "Potara Studio",
-                        description:
-                          "Developed responsive websites, optimized front-end performance, and collaborated with designers.",
+                          "Coordinated 10+ student programs and collaborated with ANTV to organize a school-wide festival event.",
                       },
                     ].map((item, index) => {
                       const isEven = index % 2 === 0;
@@ -448,7 +407,7 @@ function App() {
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
-                    Exploring My Growth as a Designer
+                    Exploring My Growth Through Committees
                   </h2>
                 </div>
 
@@ -456,29 +415,53 @@ function App() {
                   <div className="space-y-0">
                     {[
                       {
-                        year: "2022-2025",
-                        title: "Senior UI/UX Designer",
-                        company: "Odama Studio",
-                        description: null,
+                        year: "2025",
+                        title: "Vice Coordinator of Publication & IT",
+                        company: "RAJA Brawijaya 2025",
+                        description: "Led a team to develop a website system for attendance tracking and meal distribution, serving over 800 committee members during the Raja Brawijaya event.",
                       },
                       {
-                        year: "2021-2022",
-                        title: "Product Designer",
-                        company: "Vektora Studio",
+                        year: "2025",
+                        title: "Facilitator",
+                        company: "PKKMB FILKOM 2025",
                         description:
-                          "I created and refined design solutions for digital and visual projects, ensuring clarity and consistency while working with teams. I also developed prototypes to test ideas and improve the overall experience.",
+                          "Guided new students of the Faculty of Computer Science throughout the orientation period, helping them adapt to the academic environment and university culture",
                       },
                       {
-                        year: "2020-2021",
-                        title: "Graphic Designer",
-                        company: "Keitoto Studio",
-                        description: null,
+                        year: "2025",
+                        title: "Vice Project Officer",
+                        company: "Brawijaya Goes to CPNS 2025",
+                        description: "Coordinated the overall implementation of BGTC, an event designed to help students prepare for careers in the civil service sector. The program featured four national speakers, included seminar and tryout sessions, and attracted over 300 participants.",
                       },
                       {
-                        year: "2019-2021",
-                        title: "Web Developer",
-                        company: "Potara Studio",
-                        description: null,
+                        year: "2025",
+                        title: "Creative Coordinator",
+                        company: "Garasi Brawijaya 2025",
+                        description: "Responsible for all creative needs of the event, which aimed to address Indonesia’s literacy crisis by producing educational social media content inspired by personal development books.",
+                      },
+                      {
+                        year: "2025",
+                        title: "Vice Coordinator of Public Relations",
+                        company: "Next Brawijaya 2025",
+                        description: "Served as liaison and co-organizer in planning activities that encourage student self-development through inspirational and educational programs. Focused on enhancing both soft and hard skills to prepare students for global challenges.",
+                      },
+                      {
+                        year: "2025",
+                        title: "Vice Coordinator of Creative Division",
+                        company: "Brawijaya Intern & Career Expo 2025",
+                        description: "Led the creative division to manage all visual and media requirements for BICE 2024, a major career preparation event featuring seminars, certifications, and company exhibitions for graduating students.",
+                      },
+                      {
+                        year: "2023",
+                        title: "Project Officer",
+                        company: "NC Art x ANTV 2023",
+                        description: "Collaborated with ANTV Television Network to organize a large-scale art performance event at SMAN 95 Jakarta, where students showcased their talents alongside guest artists and public figures.",
+                      },
+                      {
+                        year: "2023",
+                        title: "Steering Committee",
+                        company: "37th Anniversary of SMAN 95 Jakarta",
+                        description: "Assisted the chief executive in coordinating and executing the entire celebration program for the 37th Anniversary of SMAN 95 Jakarta.",
                       },
                     ].map((exp, index) => (
                     <div
@@ -508,10 +491,12 @@ function App() {
                         </div>
                       </div>
                     </div>
-
+                    
                     ))}
                   </div>
-                  
+              <p className="text-center text-gray-500 dark:text-gray-400 mb-16 max-w-2xl mt-5 mx-auto">
+                And many other events I have contributed to.
+              </p>
               </div>
 
             </div>

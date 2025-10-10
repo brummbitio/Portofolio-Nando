@@ -29,8 +29,9 @@ const Navbar = ({ hidden = false }) => {
         <ul className="hidden md:flex items-center gap-10">
           <li><a href="#home" className="sm:text-lg text-base font-medium transition-colors">Home</a></li>
           <li><a href="#about" className="sm:text-lg text-base font-medium transition-colors">About</a></li>
-          <li><a href="#project" className="sm:text-lg text-base font-medium transition-colors">Project</a></li>
-          <li><a href="#contact" className="sm:text-lg text-base font-medium transition-colors">Contact</a></li>
+          <li><a href="#experience" className="sm:text-lg text-base font-medium transition-colors">Experience</a></li>
+          {/* <li><a href="#contact" className="sm:text-lg text-base font-medium transition-colors">Contact</a></li>
+          <li><a href="#contact" className="sm:text-lg text-base font-medium transition-colors">Contact</a></li> */}
         </ul>
 
         {/* Aksi Kanan */}
@@ -44,7 +45,7 @@ const Navbar = ({ hidden = false }) => {
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 1v2"/><path d="M12 21v2"/><path d="m4.22 4.22 1.42 1.42"/><path d="m18.36 18.36 1.42 1.42"/><path d="M1 12h2"/><path d="M21 12h2"/><path d="m4.22 19.78 1.42-1.42"/><path d="m18.36 5.64 1.42-1.42"/><circle cx="12" cy="12" r="5"/></svg>
             )}
           </button>
-          <a href="#contact" className="icon-button hidden sm:block font-semibold  p-3 px-6 rounded-full hover:opacity-90 transition-opacity">
+          <a href="https://www.instagram.com/thisnando_/" className="icon-button hidden sm:block font-semibold  p-3 px-6 rounded-full hover:opacity-90 transition-opacity">
             Get in touch
           </a>
         </div>
