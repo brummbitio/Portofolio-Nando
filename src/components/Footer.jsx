@@ -16,7 +16,7 @@ const Footer = () => {
         
         {/* Judul - paling atas di mobile */}
         <h1 className="text-2xl font-bold order-1 md:order-none">
-          Portofolio
+          Fernando Putra
         </h1>
 
         {/* Ikon Sosmed - di tengah di mobile */}

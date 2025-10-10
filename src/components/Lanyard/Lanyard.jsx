@@ -16,8 +16,8 @@ extend({ MeshLineGeometry, MeshLineMaterial });
 export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], fov = 20, transparent = true }) {
   const { theme } = useContext(ThemeContext);
 
-  const cardGLB = theme === 'light' ? "/portofolio/assets/card-light.glb"  : "/portofolio/assets/card.glb";
-  const lanyard = theme === 'light' ? "/portofolio/assets/lanyard-light.png" : "/portofolio/assets/lanyard.png";
+  const cardGLB = theme === 'light' ? "/assets/card-light.glb"  : "/assets/card.glb";
+  const lanyard = theme === 'light' ? "/assets/lanyard-light.png" : "/assets/lanyard.png";
   
   return (
     <div className="lanyard-wrapper">
