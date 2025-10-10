@@ -174,4 +174,9 @@
     background-color: #f3f4f6; /* efek hover gelap */
   }
 
+  .overlay-card {
+    background-color: var(--bg-primary);
+    border-color: var(--border-color);
+  }
+
 }
