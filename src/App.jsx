@@ -33,19 +33,19 @@ function App() {
     setSelectedProject(null);
   };
   // -------------------------
-  const quoteAvatar = theme === 'light' ? './assets/nando1-light.png' : './assets/nando1.png';
-  const profileAvatar = theme === 'light' ? './assets/nando-light.png' : './assets/nando.png';
+  const quoteAvatar = theme === 'light' ? '/assets/nando1-light.png' : '/assets/nando1.png';
+  const profileAvatar = theme === 'light' ? '/assets/nando-light.png' : '/assets/nando.png';
 
-  useEffect(() => {
-    const isReload =
-      performance.getEntriesByType("navigation")[0]?.type === "reload";
-
-    if (isReload) {
-      // Ambil path tanpa hash
-      const baseUrl = window.location.origin + "/portofolio/";
-      window.location.replace(baseUrl);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const isReload =
+  //     performance.getEntriesByType("navigation")[0]?.type === "reload";
+  // 
+  //   if (isReload) {
+  //     // Ambil path tanpa hash
+  //     const baseUrl = window.location.origin + "/portofolio/";
+  //     window.location.replace(baseUrl);
+  //   }
+  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -102,7 +102,7 @@ function App() {
             />
             <div className="flex items-center sm:gap-4 gap-2">
               {/* <a 
-                href="./assets/CV.pdf" 
+                href="/assets/CV.pdf" 
                 download="Faris_Edrik_Prayoga_CV.pdf" 
                 className="custom-button font-semibold  p-4 px-6 rounded-full border transition-colors shadow-sm"
               >
