@@ -29,7 +29,7 @@ const Navbar = ({ hidden = false }) => {
         <ul className="hidden md:flex items-center gap-10">
           <li><a href="#home" className="sm:text-lg text-base font-medium transition-colors">Home</a></li>
           <li><a href="#about" className="sm:text-lg text-base font-medium transition-colors">About</a></li>
-          <li><a href="#experience" className="sm:text-lg text-base font-medium transition-colors">Experience</a></li>
+          {/* <li><a href="#experience" className="sm:text-lg text-base font-medium transition-colors">Experience</a></li> */}
           {/* <li><a href="#contact" className="sm:text-lg text-base font-medium transition-colors">Contact</a></li>
           <li><a href="#contact" className="sm:text-lg text-base font-medium transition-colors">Contact</a></li> */}
         </ul>

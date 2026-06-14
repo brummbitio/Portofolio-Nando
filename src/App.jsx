@@ -86,10 +86,10 @@ function App() {
 
         <div className="hero grid md:grid-cols-2 items-center pt-10 xl:gap-0 gap-10 grid-cols-1">
           <div className="animate__animated animate__fadeInUp animate__delay-3s">
-            <div className="flex items-center gap-3 mb-6 w-fit p-4 rounded-2xl border dark:border-none border-gray-200 shadow-sm">
+            {/* <div className="flex items-center gap-3 mb-6 w-fit p-4 rounded-2xl border dark:border-none border-gray-200 shadow-sm">
               <img src={quoteAvatar} className="w-10 rounded-md" alt="Quote avatar"/>
               <q>Innovation starts with curiosity.</q>
-            </div>
+            </div> */}
             <h1 className="text-5xl font-bold mb-6">
               <ShinyText text="Hi I'm Fernando Putra Islamy" disabled={false} speed={3} className='custom-class' />
             </h1>
@@ -211,7 +211,7 @@ function App() {
           </div>
         </div>
 
-        {/* Experience Section */}
+        {/* Experience Section (Commented Out)
         <div className="experience-section mt-32" id="experience">
           <div 
             className="experience-container"
@@ -229,10 +229,10 @@ function App() {
               Every role and project has shaped my skills and passion for develop.
             </p>
 
-            {/* === Timeline Section Start === */}
+            // === Timeline Section Start ===
             <div className="space-y-20">
 
-              {/* Education Experience */}
+              // Education Experience
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
@@ -289,7 +289,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Work Experience */}
+              // Work Experience
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
@@ -346,7 +346,7 @@ function App() {
                   
               </div>
 
-              {/* Organization Experience */}
+              // Organization Experience
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
@@ -403,7 +403,7 @@ function App() {
                 </div>
               </div>
 
-              {/* Kepanitiaan Experience */}
+              // Kepanitiaan Experience
               <div className="py-10">
                 <div className="flex items-center gap-4 mb-12">
                   <h2 className="accent-text text-3xl lg:text-4xl font-bold text-foreground">
@@ -500,9 +500,10 @@ function App() {
               </div>
 
             </div>
-            {/* === Timeline Section End === */}
+            // === Timeline Section End ===
           </div>
         </div>
+        */}
 
 
         <div className="proyek mt-32 py-10" id="project" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"></div>
